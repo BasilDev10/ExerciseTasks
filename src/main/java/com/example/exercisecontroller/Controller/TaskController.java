@@ -44,11 +44,9 @@ public class TaskController {
         if(index > tasks.size()-1) return new ApiResponse("not found");
 
         Task task = tasks.get(index);
-        if(task.getStatus().equals("Done")){
-            task.setStatus("Not Done");
-        }else task.setStatus("Done");
-        tasks.set(index, task);
-
+        if(task.getStatus().equals("Not Done")){
+            task.setStatus("Done");
+        }else new ApiResponse("Task Aleardy done");
 
         return new ApiResponse("Updated status successfully");
     }
