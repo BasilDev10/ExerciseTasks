@@ -46,7 +46,7 @@ public class TaskController {
         Task task = tasks.get(index);
         if(task.getStatus().equals("Not Done")){
             task.setStatus("Done");
-        }else new ApiResponse("Task Aleardy done");
+        }else return new ApiResponse("Task Aleardy done");
 
         return new ApiResponse("Updated status successfully");
     }
